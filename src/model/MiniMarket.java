@@ -26,11 +26,12 @@ public class MiniMarket {
 	}
 	
 
-	public void registerPeople(String type, int number) throws
+	public void registerPeople(String type, String number) throws
 	CanNotGoOutException, HaveTIException{
-		ArrayList<Integer> document = new ArrayList<Integer>();
-		document.add(number);
-		int documentDay = document.get(document.size() - 2);
+		String[] numberList = number.split("");
+		String documentNumber = numberList[numberList.length - 2];
+		int documentDay = Integer.parseInt(documentNumber);
+		
 		int date = LocalDate.now().getDayOfMonth();
 		
 		if(documentDay%2==0) {
@@ -51,7 +52,7 @@ public class MiniMarket {
 			throw new CanNotGoOutException();
 		}
 		
-		if( (type.equals("TI"))!= true && date != documentDay ) {
+		if( (type.equals("TI") )!= true && date != documentDay ) {
 			Person person = new Person(type, number);
 			persons.add(person);
 		}

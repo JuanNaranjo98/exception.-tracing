@@ -8,9 +8,9 @@ public class Person {
 	public static final String CEDULADEESTRANGERIA = "CE";
 	
 	private String type;
-	private int number;
+	private String number;
 	
-	public Person(String tp, int num) {
+	public Person(String tp, String num) {
 		type = tp;
 		number = num;
 	}
@@ -23,11 +23,11 @@ public class Person {
 		type = tp;
 	}
 	
-	public int getNumber() {
+	public String getNumber() {
 		return number;
 	}
 	
-	public void setNumber(int n) {
+	public void setNumber(String n) {
 		number = n;
 	}
 	
